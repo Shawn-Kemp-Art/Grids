@@ -75,11 +75,25 @@ definitions = [
         },  
     },
     {
-        id: "pallete",
-        name: "Theme",
+        id: "colors1",
+        name: "Pallete 1",
         type: "select",
         default: "AllColors",
-        options: {options: ["AllColors", "SunsetGlow", "OceanBreeze", "NaturalCalm", "VintageChic", "BoldVibrant", "WintersTwilight", "WarmSpice", "SoftPetals", "FreshGreens", "MonochromeElegance", "TropicalSplash", "AutumnWarmth", "ElegantMonochrome", "SunKissedEarth", "CitrusPunch", "FrostySky", "BoldNights", "MutedElegance", "SunnyMeadows", "UrbanContrast"]},
+        options: {options: palleteNames},
+    },
+    {
+        id: "colors2",
+        name: "Pallete 2",
+        type: "select",
+        default: "None",
+        options: {options: palleteNames},
+    },
+    {
+        id: "colors3",
+        name: "Pallete 3",
+        type: "select",
+        default: "None",
+        options: {options: palleteNames},
     },
     {
         id: "framecolor",
@@ -148,9 +162,11 @@ paper.view.viewSize.height = 2400;
 
 var colors = []; var palette = []; 
 
-//set a apllete based theme and number of colors
-for (c=0; c<numofcolors; c=c+1){palette[c] = this[$fx.getParam('pallete')][R.random_int(0, this[$fx.getParam('pallete')].length-1)]}  
-console.log(palette);
+// set a pallete based on color schemes
+var newPalette = [];
+newPalette = this[$fx.getParam('colors1')].concat(this[$fx.getParam('colors2')],this[$fx.getParam('colors3')]);
+for (c=0; c<numofcolors; c=c+1){palette[c] = newPalette[R.random_int(0, newPalette.length-1)]}  
+console.log(newPalette);
 
 //randomly assign colors to layers
 for (c=0; c<stacks; c=c+1){colors[c] = palette[R.random_int(0, palette.length-1)];};
