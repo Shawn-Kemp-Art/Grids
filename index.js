@@ -44,7 +44,7 @@ var qcomplexity = R.random_int(1,10);
 if(new URLSearchParams(window.location.search).get('d')){qcomplexity = new URLSearchParams(window.location.search).get('d')}; //size
 qcomplexity = qcomplexity+3;
 
-var qorientation =R.random_int(1,2) < 1 ? "portrait" : "landscape";
+var qorientation =R.random_int(1,2) < 2 ? "portrait" : "landscape";
 var qframecolor = R.random_int(1,3) < 1 ? "White" : R.random_int(1,3) < 2 ? "Mocha" : "Random";     
 var qmatwidth = R.random_int(50,100);
 
