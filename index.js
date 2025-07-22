@@ -332,8 +332,73 @@ for (i=0;i<grid.length;i++){
     $fx.features(features);
     //$fx.preview();
 
-    //floatingframe();
-    //upspirestudio(features); //#render and send features to upspire.studio
+ //send to studio.shawnkemp.art
+ if(new URLSearchParams(window.location.search).get('request')){sendAllExports()}; 
+
+ async function sendAllExports() {
+    paper.view.update();
+    await sendCanvasToBubbleAPI(myCanvas, $fx.hash);
+    await sendSVGToBubbleAPI($fx.hash);
+    // send colors
+    var content = JSON.stringify(features,null,2);
+    await sendTextToBubbleAPI("Colors-"+$fx.hash, content)
+    // 2. Add frame
+    floatingframe();
+    paper.view.update();
+    // 3. Framed PNGs (Black, White, Walnut, Maple)
+    var frameOptions = [
+        { name: "Black", hex: "#1f1f1f" },
+        { name: "White", hex: "#f9f9f9" },
+        { name: "Walnut", hex: "#60513D" },
+        { name: "Maple", hex: "#ebd9c0" }
+    ];
+    for (var i = 0; i < frameOptions.length; i++) {
+        woodframe.style = { fillColor: frameOptions[i].hex };
+        var fileName = "Framed" + frameOptions[i].name + "-" + $fx.hash;
+        paper.view.update();
+        await sendCanvasToBubbleAPI(myCanvas, fileName);
+    }
+    // 4. Remove frame
+    floatingframe();
+    // 5. Blueprint SVG
+    for (var z = 0; z < stacks; z++) {
+        sheet[z].style = {
+            fillColor: null,
+            strokeWidth: 0.1,
+            strokeColor: lightburn[stacks - z - 1].Hex,
+            shadowColor: null,
+            shadowBlur: null,
+            shadowOffset: null
+        };
+        sheet[z].selected = true;
+    }
+    paper.view.update();
+    await sendSVGToBubbleAPI("Blueprint-" + $fx.hash);
+    // 6. Plotting SVG
+    for (var z = 0; z < stacks; z++) {
+        sheet[z].style = {
+            fillColor: null,
+            strokeWidth: 0.1,
+            strokeColor: plottingColors[stacks - z - 1].Hex,
+            shadowColor: null,
+            shadowBlur: null,
+            shadowOffset: null
+        };
+        sheet[z].selected = true;
+    }
+    for (var z = 0; z < stacks; z++) {
+        if (z < stacks - 1) {
+            for (var zs = z + 1; zs < stacks; zs++) {
+                sheet[z] = sheet[z].subtract(sheet[zs]);
+                sheet[z].previousSibling.remove();
+            }
+        }
+    }
+    paper.view.update();
+    await sendSVGToBubbleAPI("Plotting-" + $fx.hash);
+    sendFeaturesAPI(features);
+    console.log("All exports sent!");
+}
 
     
 
