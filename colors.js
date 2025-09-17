@@ -15,7 +15,6 @@ var tints = [
   {"Hex":"#CED5DB", "Name":"Clapboard"},
   {"Hex":"#CC9047", "Name":"Golden"},
   {"Hex":"#FBCBD7", "Name":"Hollyhock"},
-  {"Hex":"#EF4C84", "Name":"Hot Pink"},
   {"Hex":"#70869D", "Name":"Lavender"},
   {"Hex":"#4C739E", "Name":"Marine Blue"},
   {"Hex":"#4C4638", "Name":"Mocha"},
@@ -44,7 +43,6 @@ var tints = [
       {"Hex":"#CED5DB", "Name":"Clapboard"},
       {"Hex":"#CC9047", "Name":"Golden"},
       {"Hex":"#FBCBD7", "Name":"Hollyhock"},
-      {"Hex":"#EF4C84", "Name":"Hot Pink"},
       {"Hex":"#70869D", "Name":"Lavender"},
       {"Hex":"#4C739E", "Name":"Marine Blue"},
       {"Hex":"#4C4638", "Name":"Mocha"},
@@ -95,8 +93,7 @@ var tints = [
     {"Hex":"#A999C8", "Name":"Pansy"},
   ];
   var Pinks =[
-    {"Hex":"#FBCBD7", "Name":"Hollyhock"},
-    {"Hex":"#EF4C84", "Name":"Hot Pink"},
+    {"Hex":"#FBCBD7", "Name":"Hollyhock"}
   ];
   var Grays = [
     {"Hex":"#CED5DB", "Name":"Clapboard"},
