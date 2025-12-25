@@ -51,8 +51,7 @@ var tints = [
       {"Hex":"#C5D785", "Name":"Pistachio"},
       {"Hex":"#F7743E", "Name":"Tangerine"},
       {"Hex":"#1A1A1A", "Name":"Smooth Black"},
-      {"Hex":"#FFFFFF", "Name":"Smooth White"},
-      {"Hex":"#949B6F", "Name":"Valley Green"},
+      {"Hex":"#FFFFFF", "Name":"Smooth White"}
       ]
   
     var colornames = AllColors.map(color => color.Name);
@@ -63,26 +62,25 @@ var tints = [
     {"Hex":"#A9D0DF", "Name":"Aqua Blue"},
     {"Hex":"#4C739E", "Name":"Marine Blue"},
     {"Hex":"#63939D", "Name":"Ocean Blue"},
-    {"Hex":"#70869D", "Name":"Lavender"},
+    {"Hex":"#70869D", "Name":"Lavender"}
   ];
   var Reds = [
     {"Hex":"#AE0838", "Name":"Cardinal"},
-    {"Hex":"#8A473F", "Name":"Chili"},
+    {"Hex":"#8A473F", "Name":"Chili"}
   ];
   var Oranges =[
     {"Hex":"#CC9047", "Name":"Golden"},
-    {"Hex":"#F7743E", "Name":"Tangerine"},
+    {"Hex":"#F7743E", "Name":"Tangerine"}
   ];
   var Yellows =[
     {"Hex":"#FFF35D", "Name":"Buttercup"},
-    {"Hex":"#E1C76A", "Name":"Chamois"},
+    {"Hex":"#E1C76A", "Name":"Chamois"}
   ];
   var Greens =[
     {"Hex":"#01AE52", "Name":"Bright Green"},
     {"Hex":"#447560", "Name":"Celtic"},
     {"Hex":"#C4D817", "Name":"Chartreuse"},
-    {"Hex":"#C5D785", "Name":"Pistachio"},
-    {"Hex":"#949B6F", "Name":"Valley Green"},
+    {"Hex":"#C5D785", "Name":"Pistachio"}
   ];
   var Browns =[
     {"Hex":"#745042", "Name":"Burnt Sienna"},
@@ -90,7 +88,7 @@ var tints = [
   ];
   var Purples =[
     {"Hex":"#70869D", "Name":"Lavender"},
-    {"Hex":"#A999C8", "Name":"Pansy"},
+    {"Hex":"#A999C8", "Name":"Pansy"}
   ];
   var Pinks =[
     {"Hex":"#FBCBD7", "Name":"Hollyhock"}
@@ -98,12 +96,12 @@ var tints = [
   var Grays = [
     {"Hex":"#CED5DB", "Name":"Clapboard"},
     {"Hex":"#1A1A1A", "Name":"Smooth Black"},
-    {"Hex":"#4C4638", "Name":"Mocha"},
+    {"Hex":"#4C4638", "Name":"Mocha"}
   ];
   var Whites = [
     {"Hex":"#FEF6E3", "Name":"Antique White"},
     {"Hex":"#F5E3CF", "Name":"Beige"},
-    {"Hex":"#FFFFFF", "Name":"Smooth White"},
+    {"Hex":"#FFFFFF", "Name":"Smooth White"}
   ];
   
   
